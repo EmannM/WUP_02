@@ -34,11 +34,28 @@ veggy <- cabbages
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+  
+```{r}
+basicCN <- ggplot(veggy,aes(x=Cult,y=VitC))
+```
+## Now add in boxplot
 
+```{r}
+basicCN + geom_boxplot()
+```
+  
+The box plot shows that cultivation method c52 contains higher Vitamin C levels than cultivation method c39. The median amount of Vitamin C c52 has is about 64 while the median amount c39 has is only about 51.
+  
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
-
+  
+```{r}
+favstats(VitC~Cult,data=veggy)
+```
+  
+The table shows that the average amount of Vitamin C in cultivation method c52 is 64.4 and the average amount of Vitamin C in cultivation method c39 is 51.5. The standard deviation for c52 is about 8.46, meaning the observations are, on average, that amount of Vitamin C content away from that of the mean observation. For c39 the standard deviation is about 7.12, meaning the observations here are closer to the mean than the ones in c52 are.  
+  
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
